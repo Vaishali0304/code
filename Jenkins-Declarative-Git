@@ -1,9 +1,6 @@
 pipeline{
     agent any
-    environment{
-    Path= "C:/apache-maven-3.6.3/bin:$PATH"
-    }
-    stages{
+  stages{
         stage("Git Checkout"){
             steps{
                 git 'https://github.com/Vaishali0304/code.git'
@@ -11,7 +8,8 @@ pipeline{
       }
         stage("Maven Build"){
    steps{
-       bat "mvn clean package"
+   withMaven(maven : 'apache-maven-3.6.3') 
+       bat"mvn clean package"
    }
 }
     }
