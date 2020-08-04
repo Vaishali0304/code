@@ -8,7 +8,7 @@ pipeline{
       }
         stage("Maven Build"){
    steps{
-   withMaven(maven : 'MAVEN_HOME') 
+   withMaven(maven : 'C:\apache-maven-3.6.3') 
        bat"mvn clean package"
    }
 }
