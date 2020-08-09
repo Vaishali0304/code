@@ -25,12 +25,12 @@ pipeline {
               file: 'target/mvnwebapp.war',
               type: 'war']
                 ], 
-              credentialsId: 'Nexus',
+              credentialsId: 'nexus',
               groupId: 'jenkins.mvn.demo',
               nexusUrl: 'localhost:8081',
               nexusVersion: 'nexus3', 
               protocol: 'http',
-              repository: 'SAMPLE-REL',
+              repository: 'pipeline',
               version: '1.0.0'
             
             }
